@@ -1,0 +1,83 @@
+\documentclass[twoside,12pt]{book}
+\pagestyle{plain}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english, russian]{babel}
+%\usepackage[dvips]{graphicx}
+\usepackage[pdftex]{graphicx}
+\usepackage{verse}
+
+\usepackage{geometry}
+\geometry{papersize={145mm, 205mm}}
+
+\usepackage{caption}
+
+\setcounter{secnumdepth}{0}
+% Подключаем мантру правильных многоточий
+% Взято отсюда http://kostyrka.ru/blog/archives/42
+
+\usepackage{soulutf8,xspace} % у кого не UTF-8, те пишут просто soul
+\xspaceaddexceptions{ < ) }
+\sodef\so{}{.1em}{1em}{.3em plus.05em minus.05em}
+\newcommand{\ldotst}{\so{...}\xspace}
+\newcommand{\ldotsq}{\so{?\hbox{\hspace{-.212em}}..}\xspace}
+\newcommand{\ldotse}{\so{!..}\xspace}
+
+% Висячая пунктуация
+%\usepackage[factor=2000]{microtype}
+
+
+\begin{document}
+
+\frontmatter
+
+% Титульный лист
+\include{title}
+
+\pagenumbering{gobble}
+
+\include{oborot}
+% Страница с описанием
+% \include{description}
+
+
+% Страница с фотографией автора
+% \include{author-photo}
+
+
+
+
+% Основная часть
+\mainmatter
+
+% Вступительная статья
+%\include{intro}
+
+
+% Стихотворения
+% \chapter*{Стихотворения}
+\include{verses}
+
+
+% Заключительная часть
+\backmatter
+
+
+% \chapter{Дополнения}
+
+% Историческая справка и фотографии
+%\include{historical}
+% Фотографии
+\include{end-photos}
+
+
+
+% Оглавление
+
+\renewcommand{\baselinestretch}{0.915}\normalsize
+\tableofcontents
+\renewcommand{\baselinestretch}{1.0}\normalsize
+
+
+
+\end{document}
