@@ -1,5 +1,4 @@
-dvi:
-	latex book.tex
+all:pdf
 pdf:
 	pdflatex book.tex
 clean:
