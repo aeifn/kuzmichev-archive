@@ -1,4 +1,6 @@
-\documentclass[twoside,12pt]{book}
+%\documentclass[twoside,12pt]{book}
+\documentclass[12pt]{book}
+%\documentclass[oneside,12pt]{book}
 \pagestyle{plain}
 
 \usepackage[utf8x]{inputenc}
@@ -7,37 +9,36 @@
 \usepackage[pdftex]{graphicx}
 \usepackage{verse}
 
-\usepackage{geometry}
+\usepackage[marginratio=3:2]{geometry}
 \geometry{papersize={145mm, 205mm}}
 
+% Убираем обязательные подписи к фотографиям (Рис.)
 \usepackage{caption}
 
-\setcounter{secnumdepth}{0}
-% Подключаем мантру правильных многоточий
-% Взято отсюда http://kostyrka.ru/blog/archives/42
-
-\usepackage{soulutf8,xspace} % у кого не UTF-8, те пишут просто soul
-\xspaceaddexceptions{ < ) }
-\sodef\so{}{.1em}{1em}{.3em plus.05em minus.05em}
-\newcommand{\ldotst}{\so{...}\xspace}
-\newcommand{\ldotsq}{\so{?\hbox{\hspace{-.212em}}..}\xspace}
-\newcommand{\ldotse}{\so{!..}\xspace}
+\include{mantra}
+%\setcounter{secnumdepth}{0}
 
 % Висячая пунктуация
 %\usepackage[factor=2000]{microtype}
-
+%\setlength{\oddsidemargin}{5mm}
+%\setlength{\evensidemargin}{5mm}
+% See more at: http://www.howtotex.com/tips-tricks/two-sided-latex-page-margins/#sthash.HA9tTo9O.dpuf
 
 \begin{document}
 
-\frontmatter
+%\frontmatter
+
+% Нумерацию страниц начинаем с титульного листа:
+\mainmatter
 
 % Титульный лист
 \include{title}
 
-\pagenumbering{gobble}
-
+%\pagenumbering{gobble}
 \include{oborot}
+
 % Страница с описанием
+% Мы ее исключили
 % \include{description}
 
 
@@ -48,8 +49,8 @@
 
 
 % Основная часть
-\mainmatter
-
+%\mainmatter
+%\setcounter{page}{3}
 % Вступительная статья
 %\include{intro}
 
