@@ -1,10 +1,18 @@
 %\documentclass[twoside,12pt]{book}
+
 \documentclass[12pt]{book}
+
 %\documentclass[oneside,12pt]{book}
+
 \pagestyle{plain}
 
+% Include support of UTF-8
 \usepackage[utf8x]{inputenc}
+
+% Multilanguage package
 \usepackage[english, russian]{babel}
+
+% Package for including graphics
 %\usepackage[dvips]{graphicx}
 \usepackage[pdftex]{graphicx}
 \usepackage{verse}
@@ -12,24 +20,22 @@
 \usepackage[marginratio=3:2]{geometry}
 \geometry{papersize={145mm, 205mm}}
 
+% Caption package
 % Убираем обязательные подписи к фотографиям (Рис.)
 \usepackage{caption}
 
+% Include multidots module
 \include{mantra}
-%\setcounter{secnumdepth}{0}
 
-% Висячая пунктуация
-%\usepackage[factor=2000]{microtype}
-%\setlength{\oddsidemargin}{5mm}
-%\setlength{\evensidemargin}{5mm}
-% See more at: http://www.howtotex.com/tips-tricks/two-sided-latex-page-margins/#sthash.HA9tTo9O.dpuf
+
+% ToC heading change
+% Вместо Оглавление должно быть написано Содержание.
+\addto\captionsrussian{%
+  \renewcommand{\contentsname}%
+    {Содержание}%
+}
 
 \begin{document}
-
-%\frontmatter
-
-% Нумерацию страниц начинаем с титульного листа:
-%\mainmatter
 
 % Титульный лист
 \include{title}
@@ -37,48 +43,18 @@
 %\pagenumbering{gobble}
 \include{oborot}
 
-% Страница с описанием
-% Мы ее исключили
-% \include{description}
-
-
-% Страница с фотографией автора
-% \include{author-photo}
-
-
-
-
-% Основная часть
-%\mainmatter
-%\setcounter{page}{3}
-% Вступительная статья
-%\include{intro}
-
-
 % Стихотворения
-% \chapter*{Стихотворения}
 \include{verses}
 
-
-% Заключительная часть
-%\backmatter
-
-
-% \chapter{Дополнения}
-
-% Историческая справка и фотографии
-%\include{historical}
 % Фотографии
 \include{end-photos}
 
+% Содержание
 
-
-% Оглавление
-
-\renewcommand{\baselinestretch}{0.915}\normalsize
+% Tricks for minimizing line-height
+%\renewcommand{\baselinestretch}{0.915}\normalsize
 \tableofcontents
-\renewcommand{\baselinestretch}{1.0}\normalsize
-
+%\renewcommand{\baselinestretch}{1.0}\normalsize
 
 
 \end{document}
