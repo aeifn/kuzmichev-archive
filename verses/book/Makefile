@@ -1,5 +1,7 @@
 all:pdf
+
 pdf:
+	test -f book.toc || pdflatex book.tex
 	pdflatex book.tex
 clean:
-	rm book.pdf book.dvi
+	rm *.pdf *.aux *.log *.toc
