@@ -1,0 +1,8 @@
+*#
+*~
+*.dvi
+*.log
+*.aux
+*.swp
+*.toc
+**/book.pdf

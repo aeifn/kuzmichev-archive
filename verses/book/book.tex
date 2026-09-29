@@ -1,0 +1,60 @@
+%\documentclass[twoside,12pt]{book}
+
+\documentclass[12pt]{book}
+
+%\documentclass[oneside,12pt]{book}
+
+\pagestyle{plain}
+
+% Include support of UTF-8
+\usepackage[utf8x]{inputenc}
+
+% Multilanguage package
+\usepackage[english, russian]{babel}
+
+% Package for including graphics
+%\usepackage[dvips]{graphicx}
+\usepackage[pdftex]{graphicx}
+\usepackage{verse}
+
+\usepackage[marginratio=3:2]{geometry}
+\geometry{papersize={145mm, 205mm}}
+
+% Caption package
+% Убираем обязательные подписи к фотографиям (Рис.)
+\usepackage{caption}
+
+% Include multidots module
+\include{mantra}
+
+
+% ToC heading change
+% Вместо Оглавление должно быть написано Содержание.
+\addto\captionsrussian{%
+  \renewcommand{\contentsname}%
+    {Содержание}%
+}
+
+\begin{document}
+
+% Титульный лист
+\include{title}
+
+%\pagenumbering{gobble}
+\include{oborot}
+
+% Стихотворения
+\include{verses}
+
+% Фотографии
+\include{end-photos}
+
+% Содержание
+
+% Tricks for minimizing line-height
+%\renewcommand{\baselinestretch}{0.915}\normalsize
+\tableofcontents
+%\renewcommand{\baselinestretch}{1.0}\normalsize
+
+
+\end{document}

@@ -1,0 +1,9 @@
+% Подключаем мантру правильных многоточий
+% Взято отсюда http://kostyrka.ru/blog/archives/42
+
+\usepackage{soulutf8,xspace} % у кого не UTF-8, те пишут просто soul
+\xspaceaddexceptions{ < ) }
+\sodef\so{}{.1em}{1em}{.3em plus.05em minus.05em}
+\newcommand{\ldotst}{\so{...}\xspace}
+\newcommand{\ldotsq}{\so{?\hbox{\hspace{-.212em}}..}\xspace}
+\newcommand{\ldotse}{\so{!..}\xspace}
