@@ -2,6 +2,8 @@
 
 Архив текстов Егора Кузьмича Кузьмичева.
 
+**Книги в PDF: https://aeifn.github.io/kuzmichev-archive/**
+
 - [`completeworks/`](completeworks) — полное собрание сочинений: стихи, рассказы, публицистика
 - [`verses/`](verses) — книга стихов
 - [`letters/`](letters) — письма с комментариями и справками о персоналиях
@@ -20,6 +22,10 @@ make completeworks
 make letters
 make watch BOOK=letters   # пересборка при каждом изменении
 ```
+
+Сайт с книгами собирается `site/build.sh` в `_site/` и публикуется
+на GitHub Pages автоматически при каждом пуше в `master`
+(`.github/workflows/pages.yml`).
 
 Общее оформление — в [`template/archive.typ`](template/archive.typ):
 формат 145×205 мм, шрифт Old Standard TT (лежит в `template/fonts/`,

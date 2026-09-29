@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Егор Кузьмичев — книги</title>
+<meta name="description" content="Стихи, рассказы, публицистика и письма крестьянского поэта Егора Кузьмича Кузьмичева (1867–1933). Книги в PDF для чтения и скачивания.">
+<meta property="og:title" content="Егор Кузьмичев (1867–1933)">
+<meta property="og:description" content="Стихи, рассказы и письма крестьянского поэта Волоколамского края. Книги в PDF.">
+<meta property="og:image" content="img/portrait.png">
+<link rel="icon" href="img/portrait.png">
+<style>
+  @font-face { font-family: "Old Standard"; src: url(fonts/OldStandardTT-Regular.ttf); font-weight: 400; font-display: swap; }
+  @font-face { font-family: "Old Standard"; src: url(fonts/OldStandardTT-Italic.ttf); font-style: italic; font-display: swap; }
+  @font-face { font-family: "Old Standard"; src: url(fonts/OldStandardTT-Bold.ttf); font-weight: 700; font-display: swap; }
+
+  :root {
+    --paper: #f5efe3;
+    --paper-deep: #ece3d2;
+    --ink: #231e18;
+    --muted: #6f6558;
+    --rule: #cfc3ad;
+    --accent: #8b3a24;
+    --accent-ink: #fbf6ec;
+    --shadow: 0 1px 2px rgb(60 40 20 / .12), 0 10px 28px rgb(60 40 20 / .16);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1c1916;
+      --paper-deep: #24201c;
+      --ink: #ebe3d5;
+      --muted: #a89c8a;
+      --rule: #4a4238;
+      --accent: #d9926f;
+      --accent-ink: #1c1916;
+      --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 12px 30px rgb(0 0 0 / .45);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 19px/1.6 "Old Standard", "PT Serif", Georgia, serif;
+    font-kerning: normal;
+    hyphens: auto;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+
+  .caps {
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font-size: .72rem;
+    color: var(--muted);
+  }
+  .ornament {
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    color: var(--rule); margin: 28px auto;
+  }
+  .ornament::before, .ornament::after {
+    content: ""; width: 64px; height: 1px; background: var(--rule);
+  }
+
+  /* ---------- шапка */
+  header.hero { text-align: center; padding-top: 64px; padding-bottom: 24px; }
+  .portrait {
+    width: 172px; aspect-ratio: 3 / 4; margin: 0 auto 30px;
+    border-radius: 50%; overflow: hidden;
+    background: #fff;
+    box-shadow: 0 0 0 1px var(--rule), 0 0 0 7px var(--paper), 0 0 0 8px var(--rule);
+  }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  h1 {
+    font-weight: 400; font-size: clamp(2.1rem, 6vw, 3.3rem);
+    line-height: 1.1; margin: 10px 0 8px; letter-spacing: .01em;
+  }
+  .dates { font-size: 1.1rem; letter-spacing: .08em; margin: 0; }
+  .tagline { font-style: italic; color: var(--muted); margin: 6px 0 0; }
+  .intro { max-width: 34em; margin: 0 auto; text-align: justify; }
+  .intro p { margin: 0; text-indent: 1.4em; }
+
+  /* ---------- книги */
+  section.books { padding-top: 12px; padding-bottom: 40px; }
+  section.books > h2 { text-align: center; font-weight: 400; margin: 0 0 8px; }
+  .book {
+    display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: center;
+    padding: 48px 0; border-top: 1px solid var(--rule);
+  }
+  .book:first-of-type { border-top: 0; }
+
+  .spread { position: relative; height: 330px; }
+  .spread img {
+    position: absolute; width: 190px; background: #fff;
+    box-shadow: var(--shadow); border-radius: 2px;
+    transition: transform .35s ease;
+  }
+  .spread .title { left: 0; top: 18px; transform: rotate(-3deg); }
+  .spread .page { left: 98px; top: 0; transform: rotate(2.5deg); }
+  .book:hover .spread .title { transform: rotate(-5deg) translateX(-6px); }
+  .book:hover .spread .page { transform: rotate(4deg) translateX(6px); }
+
+  .book h3 { font-weight: 400; font-size: 1.85rem; line-height: 1.2; margin: 6px 0 4px; }
+  .book .sub { font-style: italic; color: var(--muted); margin: 0 0 14px; }
+  .book .desc { margin: 0 0 18px; }
+  .meta { color: var(--muted); font-size: .9rem; margin: 0 0 20px; }
+  .meta span + span::before { content: "·"; margin: 0 .55em; }
+
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: .5em;
+    padding: .55em 1.15em; border-radius: 3px;
+    font: inherit; font-size: .95rem; text-decoration: none;
+    border: 1px solid var(--accent); transition: background .2s, color .2s;
+  }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); }
+  .btn.primary:hover { background: transparent; color: var(--accent); }
+  .btn.ghost { color: var(--accent); }
+  .btn.ghost:hover { background: var(--accent); color: var(--accent-ink); }
+  .btn svg { width: 1em; height: 1em; }
+
+  /* ---------- подвал */
+  footer {
+    background: var(--paper-deep); border-top: 1px solid var(--rule);
+    padding: 36px 0 44px; text-align: center; font-size: .88rem; color: var(--muted);
+  }
+  footer p { margin: 4px 0; }
+
+  @media (max-width: 760px) {
+    body { font-size: 18px; }
+    header.hero { padding-top: 44px; }
+    .book { grid-template-columns: 1fr; gap: 24px; padding: 40px 0; }
+    .spread { height: 250px; width: 250px; margin: 0 auto; }
+    .spread img { width: 150px; }
+    .spread .page { left: 90px; }
+    .intro { text-align: left; }
+  }
+  @media (prefers-reduced-motion: reduce) { .spread img { transition: none; } }
+</style>
+</head>
+<body>
+
+<header class="hero wrap">
+  <div class="portrait"><img src="img/portrait.png" alt="Егор Кузьмич Кузьмичев, портрет"></div>
+  <div class="caps">Крестьянский поэт Волоколамского края</div>
+  <h1>Егор Кузьмич Кузьмичев</h1>
+  <p class="dates">1867–1933</p>
+
+  <div class="ornament">✻</div>
+
+  <div class="intro">
+    <p>Настала необходимость издать книгу поэзии крестьянского поэта Егора Кузьмича Кузьмичева, т.&nbsp;к. последнее крупное издание было в&nbsp;1917 году. Пройдя сквозь век стихи приобрели ценность как документ эпохи. Его сугубо крестьянская лирика обращена к&nbsp;земле и&nbsp;считается продолжением крестьянской линии поэзии Сурикова, Никитина, Кольцова.</p>
+    <p>В поэзии крестьянского поэта сильна связь с&nbsp;народной песней. Стиль, мелодия, ритм&nbsp;— все звучит русским звуком.</p>
+  </div>
+</header>
+
+<section class="books wrap" aria-labelledby="books-h">
+  <div class="ornament">✻</div>
+  <h2 id="books-h" class="caps">Книги</h2>
+
+  <article class="book">
+    <div class="spread" aria-hidden="true">
+      <img class="title" src="img/izbrannye-stihotvoreniya-title.png" alt="" loading="lazy">
+      <img class="page" src="img/izbrannye-stihotvoreniya-page.png" alt="" loading="lazy">
+    </div>
+    <div>
+      <div class="caps">Москва, 2016</div>
+      <h3>Избранные стихотворения</h3>
+      <p class="sub">Книга стихов</p>
+      <p class="desc">Пятьдесят одно стихотворение по тексту книги 1917 года, сохранившейся с&nbsp;рукописными авторскими правками. В&nbsp;конце&nbsp;— фотографии: съезд крестьянских писателей 1929 года и&nbsp;писатели Волоколамского уезда.</p>
+      <p class="meta"><span>PDF</span><span>{{pages:izbrannye-stihotvoreniya}} стр.</span><span>{{size:izbrannye-stihotvoreniya}} МБ</span></p>
+      <div class="actions">
+        <a class="btn primary" href="books/kuzmichev-izbrannye-stihotvoreniya.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16"/></svg>
+          Скачать PDF
+        </a>
+        <a class="btn ghost" href="books/kuzmichev-izbrannye-stihotvoreniya.pdf" target="_blank" rel="noopener">Читать онлайн</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="book">
+    <div class="spread" aria-hidden="true">
+      <img class="title" src="img/sobranie-sochineniy-title.png" alt="" loading="lazy">
+      <img class="page" src="img/sobranie-sochineniy-page.png" alt="" loading="lazy">
+    </div>
+    <div>
+      <div class="caps">Полное собрание</div>
+      <h3>Собрание сочинений</h3>
+      <p class="sub">Стихотворения, рассказы, публицистика</p>
+      <p class="desc">Все известные стихотворения&nbsp;— из&nbsp;изданий 1904 и&nbsp;1917 годов, газет, рукописей домашнего архива и&nbsp;переписки,&nbsp;— рассказ «Пименов» и&nbsp;воспоминания о&nbsp;1917 годе в&nbsp;деревне.</p>
+      <p class="meta"><span>PDF</span><span>{{pages:sobranie-sochineniy}} стр.</span><span>{{size:sobranie-sochineniy}} МБ</span></p>
+      <div class="actions">
+        <a class="btn primary" href="books/kuzmichev-sobranie-sochineniy.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16"/></svg>
+          Скачать PDF
+        </a>
+        <a class="btn ghost" href="books/kuzmichev-sobranie-sochineniy.pdf" target="_blank" rel="noopener">Читать онлайн</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="book">
+    <div class="spread" aria-hidden="true">
+      <img class="title" src="img/pisma-title.png" alt="" loading="lazy">
+      <img class="page" src="img/pisma-page.png" alt="" loading="lazy">
+    </div>
+    <div>
+      <div class="caps">Переписка</div>
+      <h3>Письма</h3>
+      <p class="sub">С комментариями и справками о персоналиях</p>
+      <p class="desc">Письма сыновей, собратьев-писателей и&nbsp;редакций и&nbsp;ответы самого Кузьмичева&nbsp;— с&nbsp;1908 года, когда писал сын Виктор, до&nbsp;1930-х годов. По&nbsp;домашнему архиву и&nbsp;фондам РГАЛИ.</p>
+      <p class="meta"><span>PDF</span><span>{{pages:pisma}} стр.</span><span>{{size:pisma}} МБ</span></p>
+      <div class="actions">
+        <a class="btn primary" href="books/kuzmichev-pisma.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16"/></svg>
+          Скачать PDF
+        </a>
+        <a class="btn ghost" href="books/kuzmichev-pisma.pdf" target="_blank" rel="noopener">Читать онлайн</a>
+      </div>
+    </div>
+  </article>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Архив текстов Егора Кузьмича Кузьмичева · Издательство Кузьмичевых · {{year}}</p>
+    <p>Книги собираются автоматически из&nbsp;<a href="https://github.com/aeifn/kuzmichev-archive">исходных текстов на&nbsp;GitHub</a>. Набор&nbsp;— Typst, шрифт&nbsp;— Old Standard TT.</p>
+  </div>
+</footer>
+
+</body>
+</html>
