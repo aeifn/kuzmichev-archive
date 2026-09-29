@@ -1,5 +1,7 @@
-all:pdf
-pdf:
-	pdflatex book.tex
+all:
+	$(MAKE) -C .. completeworks
+
 clean:
-	rm book.pdf book.dvi
+	rm -f book.pdf
+
+.PHONY: all clean

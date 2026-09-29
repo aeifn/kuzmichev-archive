@@ -1,7 +1,7 @@
-all:pdf
+all:
+	$(MAKE) -C ../.. verses
 
-pdf:
-	test -f book.toc || pdflatex book.tex
-	pdflatex book.tex
 clean:
-	rm *.pdf *.aux *.log *.toc
+	rm -f book.pdf
+
+.PHONY: all clean
